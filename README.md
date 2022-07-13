@@ -30,23 +30,16 @@ De container kan eenvoudig in Azure worden uitgerold.<br>
 Kies na inloggen op de homepage van de Azure Portal voor 'Container Instances' en werkt door de formulieren heen.<br>
 ![image](https://user-images.githubusercontent.com/57792298/178724259-95822596-65dd-4107-9498-d07c2c46da26.png)<br>
 ![image](https://user-images.githubusercontent.com/57792298/178724437-893c810b-0a1c-4d15-8508-8b815f6681f6.png)<br>
-
-
-
-
-
-Er zal een resource group worden gemaakt met daarin de container instance.<br>
-Belangrijk! Voeg bij Networking poort *8000/tcp* toe, hierop luistert de app in de container. Port mappings zoals in Docker zijn in Azure (nog) niet mogelijk. Vergeet ook niet een *DNS name label* op te geven zodat je de container kan aanroepen.
-
-![image](https://user-images.githubusercontent.com/57792298/178720962-3a598ee0-1fec-4fc0-b09d-ef245b7b1c41.png)
-
-Na deployment volgens het voorbeeld in het plaatje kan je de container aanroepen met: `http://eennaam.eastus2.azurecontainer.io:8000/`<br>
-In de root context zal een simpele boodschap worden getoond. Om de API call naar het model te testen moet je de root voor de Swagger UI ```/docs``` gebruiken. Hieronder een voorbeeld van een container uitrol.
-
-![image](https://user-images.githubusercontent.com/57792298/178722957-3232853e-1889-4d1a-8180-adfa48c324be.png)
-
+![image](https://user-images.githubusercontent.com/57792298/178724937-980237a4-4fc9-43c3-8af1-7ff265ff99d0.png)<br>
+![image](https://user-images.githubusercontent.com/57792298/178725083-46d3cfb7-5e8a-4789-8e3b-24143d993a33.png)<br>
+Belangrijk! Voeg bij Networking poort *8000/tcp* toe, hierop luistert de app in de container. Port mappings zoals in Docker zijn in Azure (nog) niet mogelijk. Vergeet ook niet een *DNS name label* op te geven zodat je de container kan aanroepen. Hierna kan je op *Review + create* en na de validatie op *Create* klikken. Het kan soms even duren voordat de container is gedeployed. Er zal een resource group worden gemaakt met daarin de container instance.<br>
+![image](https://user-images.githubusercontent.com/57792298/178725661-f0133755-de4f-4228-a383-7a5d8f21bc28.png)
+Klik op *Go to resource*. Op het volgende scherm in de rechter kolom vind je de FQDN om de container te kunnen benaderen. In dit voorbeeld:<br>
+![image](https://user-images.githubusercontent.com/57792298/178725927-991438a9-f87b-45cc-86da-dd881635638f.png)<br>
+In dit voorbeeld kan je de container dus aanroepen met: `containerpoc.westeurope.azurecontainer.io:8000/`<br>
+De aanroep naar de root context zal een simpele boodschap tonen; ```{"message":"FastAPI zegt Hallo Wereld"}```. Om de API call naar het model te testen moet je de context voor de Swagger UI ```/docs``` gebruiken. Hieronder een voorbeeld van een container uitrol.<br>
+![image](https://user-images.githubusercontent.com/57792298/178722957-3232853e-1889-4d1a-8180-adfa48c324be.png)<br>
 Voor meer informatie over het gebruik van [FastAPI](https://fastapi.tiangolo.com/ "FastAPI documentatie") is goede documentatie beschikbaar.
-
 
 ### Data set
 De dataset komt van de UCI Machine Learning Repository:
