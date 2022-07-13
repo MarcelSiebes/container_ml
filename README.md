@@ -8,10 +8,10 @@
 ```
 conda create -name logistische_regressie
 conda activate logistische_regressie
+cd workdir_model_training
 pip install -r conda_requirements.txt
-cd workdir
 python logistische-regressie.py
-mv logistische-regressie.pkl ../app
+cp logistische-regressie.pkl ../app
 ```
 
 ## En dan nu:
