@@ -29,6 +29,14 @@ Je kan ook direct gebruik maken van de Swagger UI: `http://127.0.0.1:8000/docs`
 
 Vanuit de getoonde UI kan de API eenvoudig worden getest.
 
+### ACI
+De conatiner kan eenvoudig in Azure worden uitgerold. Kies na inloggen op de homepage van de Azure Portal voor 'Container Instances' en werkt door de formulieren heen. Er zal een resource group worden gemaakt met daarin de container instance.
+Belangrijk! Voeg bij Networking poort *8000/tcp* toe, hier luistert de app in de container op. Mapping zoals in Docker zijn in Azure (nog) niet mogelijk. Vergeet ook niet een *DNS name label* op te geven zodat je de container kan aanroepen.
+
+![image](https://user-images.githubusercontent.com/57792298/178720962-3a598ee0-1fec-4fc0-b09d-ef245b7b1c41.png)
+
+Na deployment volgens het voorbeeld in het plaatje kan je de container aanroepen met: `http://eennaam.eastus2.azurecontainer.io`
+
 ### Data set
 De dataset komt van de UCI Machine Learning Repository:
 
