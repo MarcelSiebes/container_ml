@@ -26,7 +26,15 @@ Je kan ook direct gebruik maken van de Swagger UI: `http://127.0.0.1:8000/docs`<
 Vanuit de getoonde UI kan de API eenvoudig worden getest.
 
 ### ACI
-De container kan eenvoudig in Azure worden uitgerold. Kies na inloggen op de homepage van de Azure Portal voor 'Container Instances' en werkt door de formulieren heen. Er zal een resource group worden gemaakt met daarin de container instance.<br>
+De container kan eenvoudig in Azure worden uitgerold.<br>
+Kies na inloggen op de homepage van de Azure Portal voor 'Container Instances' en werkt door de formulieren heen.<br>
+![image](https://user-images.githubusercontent.com/57792298/178724259-95822596-65dd-4107-9498-d07c2c46da26.png)
+![image](https://user-images.githubusercontent.com/57792298/178724437-893c810b-0a1c-4d15-8508-8b815f6681f6.png)
+
+
+
+
+Er zal een resource group worden gemaakt met daarin de container instance.<br>
 Belangrijk! Voeg bij Networking poort *8000/tcp* toe, hierop luistert de app in de container. Port mappings zoals in Docker zijn in Azure (nog) niet mogelijk. Vergeet ook niet een *DNS name label* op te geven zodat je de container kan aanroepen.
 
 ![image](https://user-images.githubusercontent.com/57792298/178720962-3a598ee0-1fec-4fc0-b09d-ef245b7b1c41.png)
