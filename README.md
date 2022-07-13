@@ -31,7 +31,13 @@ Belangrijk! Voeg bij Networking poort *8000/tcp* toe, hierop luistert de app in 
 
 ![image](https://user-images.githubusercontent.com/57792298/178720962-3a598ee0-1fec-4fc0-b09d-ef245b7b1c41.png)
 
-Na deployment volgens het voorbeeld in het plaatje kan je de container aanroepen met: `http://eennaam.eastus2.azurecontainer.io`
+Na deployment volgens het voorbeeld in het plaatje kan je de container aanroepen met: `http://eennaam.eastus2.azurecontainer.io:8000/`<br>
+In de root context zal een simpele boodschap worden getoond. Om de API call naar het model te testen moet je de root voor de Swagger UI ```/docs``` gebruiken. Hieronder een voorbeeld van een container uitrol.
+
+![image](https://user-images.githubusercontent.com/57792298/178722957-3232853e-1889-4d1a-8180-adfa48c324be.png)
+
+Voor meer informatie over het gebruik van [FastAPI](https://fastapi.tiangolo.com/ "FastAPI documentatie") is goede documentatie beschikbaar.
+
 
 ### Data set
 De dataset komt van de UCI Machine Learning Repository:
