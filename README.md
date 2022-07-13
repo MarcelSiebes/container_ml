@@ -21,8 +21,10 @@ Gebruik de Docker extensie in VSCode om het image testen in Docker Desktop.
 - Start de container
 - Open een browser
 
-Je kunt nu een test API call uitvoeren om te bepalen of FastAPI werkt: http://127.0.0.1:8000/
+Je kunt nu een test API call uitvoeren om te bepalen of FastAPI werkt: `http://127.0.0.1:8000/`
+
 Dit levert als het goed is gegaan de volgende output: ```{"message":"FastAPI zegt Hallo Wereld"}```
 	
-Je kan ook direct gebruik maken van de Swagger UI: http://127.0.0.1:8000/docs
+Je kan ook direct gebruik maken van de Swagger UI: `http://127.0.0.1:8000/docs`
+
 Vanuit de getoonde UI kan de API eenvoudig worden getest.
