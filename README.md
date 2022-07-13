@@ -42,7 +42,7 @@ De aanroep naar de root context zal een simpele boodschap tonen; ```{"message":"
 ![image](https://user-images.githubusercontent.com/57792298/178722957-3232853e-1889-4d1a-8180-adfa48c324be.png)<br><br>
 
 ### Gebruik van de container
-Om de API call te kunnen testen klik je op ```**POST /predict** Predict Bankbiljet``` balk.<br><br>
+Om de API call te kunnen testen klik je op ```POST /predict Predict Bankbiljet``` balk.<br><br>
 ![image](https://user-images.githubusercontent.com/57792298/178727346-20b3326b-e23f-4e2a-a47e-2f9b221102b1.png)<br><br>
 Klik op *Try it out* en vul wat getallen in (dat mogen integers en floats zijn).<br><br>
 ![image](https://user-images.githubusercontent.com/57792298/178727631-9d2197d4-38f6-4f8c-9e35-dab46781b736.png)<br><br>
