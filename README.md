@@ -29,9 +29,9 @@ Vanuit de getoonde UI kan de API eenvoudig worden getest.
 ### Deployment van de container
 De container kan eenvoudig in Azure worden uitgerold.<br>
 Kies na inloggen op de homepage van de Azure Portal voor 'Container Instances' en werkt door de formulieren heen.<br>
-![image](https://user-images.githubusercontent.com/57792298/178724259-95822596-65dd-4107-9498-d07c2c46da26.png)<br>
-![image](https://user-images.githubusercontent.com/57792298/178724437-893c810b-0a1c-4d15-8508-8b815f6681f6.png)<br>
-![image](https://user-images.githubusercontent.com/57792298/178724937-980237a4-4fc9-43c3-8af1-7ff265ff99d0.png)<br>
+![image](https://user-images.githubusercontent.com/57792298/178724259-95822596-65dd-4107-9498-d07c2c46da26.png)<br><br>
+![image](https://user-images.githubusercontent.com/57792298/178724437-893c810b-0a1c-4d15-8508-8b815f6681f6.png)<br><br>
+![image](https://user-images.githubusercontent.com/57792298/178724937-980237a4-4fc9-43c3-8af1-7ff265ff99d0.png)<br><br>
 ![image](https://user-images.githubusercontent.com/57792298/178725083-46d3cfb7-5e8a-4789-8e3b-24143d993a33.png)<br>
 Belangrijk! Voeg bij Networking poort *8000/tcp* toe, hierop luistert de app in de container. Port mappings zoals in Docker zijn in Azure (nog) niet mogelijk. Vergeet ook niet een *DNS name label* op te geven zodat je de container kan aanroepen. Hierna kan je op *Review + create* en na de validatie op *Create* klikken. Het kan soms even duren voordat de container is gedeployed. Er zal een resource group worden gemaakt met daarin de container instance.<br>
 ![image](https://user-images.githubusercontent.com/57792298/178725661-f0133755-de4f-4228-a383-7a5d8f21bc28.png)
