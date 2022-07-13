@@ -1,10 +1,10 @@
 # Instructies
-### Vooraf installeren:
+## Vooraf installeren:
 - Docker Desktop
 - Anaconda
 - VSCode
 
-### Voer uit:
+## Voer uit:
 ```
 conda create -name logistische_regressie
 conda activate logistische_regressie
@@ -14,7 +14,7 @@ python logistische-regressie.py
 mv logistische-regressie.pkl ../app
 ```
 
-### En dan nu:
+## En dan nu:
 Build de docker container vanuit VSCode (rechter muisklik op de Dockerfile en selecteer 'Build Image')<br>
 Gebruik de Docker extensie in VSCode om het image testen in Docker Desktop.
 - Start de container
@@ -25,7 +25,8 @@ Dit levert als het goed is gegaan de volgende output: ```{"message":"FastAPI zeg
 Je kan ook direct gebruik maken van de Swagger UI: `http://127.0.0.1:8000/docs`<br>
 Vanuit de getoonde UI kan de API eenvoudig worden getest.
 
-### ACI
+## ACI
+### Deployment van de container
 De container kan eenvoudig in Azure worden uitgerold.<br>
 Kies na inloggen op de homepage van de Azure Portal voor 'Container Instances' en werkt door de formulieren heen.<br>
 ![image](https://user-images.githubusercontent.com/57792298/178724259-95822596-65dd-4107-9498-d07c2c46da26.png)<br>
@@ -39,6 +40,16 @@ Klik op *Go to resource*. Op het volgende scherm in de rechter kolom vind je de 
 In dit voorbeeld kan je de container dus aanroepen met: `containerpoc.westeurope.azurecontainer.io:8000/`<br>
 De aanroep naar de root context zal een simpele boodschap tonen; ```{"message":"FastAPI zegt Hallo Wereld"}```. Om de API call naar het model te testen moet je de context voor de Swagger UI ```/docs``` gebruiken. Hieronder een voorbeeld van een container uitrol.<br>
 ![image](https://user-images.githubusercontent.com/57792298/178722957-3232853e-1889-4d1a-8180-adfa48c324be.png)<br>
+
+### Gebruik van de container
+Om de API call te kunnen testen klik je op ```**POST /predict** Predict Bankbiljet``` balk.
+![image](https://user-images.githubusercontent.com/57792298/178727346-20b3326b-e23f-4e2a-a47e-2f9b221102b1.png)<br>
+Klik op *Try it out* en vul wat getallen in (dat mogen integers en floats zijn).
+![image](https://user-images.githubusercontent.com/57792298/178727631-9d2197d4-38f6-4f8c-9e35-dab46781b736.png)
+Klik daarna op *Execute* en scrol een stukje naar beneden totdat je de server response ziet.<br>
+![image](https://user-images.githubusercontent.com/57792298/178727910-00db5d50-ebb8-4ad5-b48f-1b70ae07332f.png)<br>
+Voor de ingevulde waarden heeft het model voorspeld dat het een goed bankbiljet is.
+
 Voor meer informatie over het gebruik van [FastAPI](https://fastapi.tiangolo.com/ "FastAPI documentatie") is goede documentatie beschikbaar.
 
 ### Data set
