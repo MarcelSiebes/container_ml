@@ -15,7 +15,7 @@ cp logistische-regressie.pkl ../app
 ```
 
 ## En dan nu:
-Build de docker container vanuit VSCode (rechter muisklik op de Dockerfile en selecteer 'Build Image')<br>
+Build de docker container vanuit VSCode (rechter muisklik op de Dockerfile en selecteer *Build Image*)<br>
 Gebruik de Docker extensie in VSCode om het image testen in Docker Desktop.
 - Start de container
 - Open een browser
@@ -23,12 +23,12 @@ Gebruik de Docker extensie in VSCode om het image testen in Docker Desktop.
 Je kunt nu een test API call uitvoeren om te bepalen of FastAPI werkt: `http://127.0.0.1:8000/`<br>
 Dit levert als het goed is gegaan de volgende output: ```{"message":"FastAPI zegt Hallo Wereld"}```<br>
 Je kan ook direct gebruik maken van de Swagger UI: `http://127.0.0.1:8000/docs`<br>
-Vanuit de getoonde UI kan de API eenvoudig worden getest.
+Vanuit de getoonde UI kan de API worden getest.
 
 ## ACI
 ### Deployment van de container
 De container kan eenvoudig in Azure worden uitgerold.<br>
-Kies na inloggen op de homepage van de Azure Portal voor 'Container Instances' en werkt door de formulieren heen.<br><br>
+Kies na inloggen op de homepage van de Azure Portal voor *Container Instances* en werk door de formulieren heen.<br><br>
 ![image](https://user-images.githubusercontent.com/57792298/178724259-95822596-65dd-4107-9498-d07c2c46da26.png)<br><br><br>
 ![image](https://user-images.githubusercontent.com/57792298/178724437-893c810b-0a1c-4d15-8508-8b815f6681f6.png)<br><br><br>
 ![image](https://user-images.githubusercontent.com/57792298/178724937-980237a4-4fc9-43c3-8af1-7ff265ff99d0.png)<br><br><br>
