@@ -29,7 +29,7 @@ http://127.0.0.1:8000/
 
 	Dit levert als het goed is gegaan de volgende output:
 	
-	```{"message":"FastAPI zegt Hallo Wereld"}```
+	=={"message":"FastAPI zegt Hallo Wereld"}==
 	
 Je kan ook direct gebruik maken van de Swagger UI:
 
