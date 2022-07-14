@@ -6,7 +6,7 @@
 
 ## Voer uit:
 ```
-git clone 
+git clone https://github.com/MarcelSiebes/container_ml.git
 conda create -name logistische_regressie
 conda activate logistische_regressie
 cd workdir_model_training
