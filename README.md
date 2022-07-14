@@ -1,5 +1,5 @@
 # Doel
-Een POC om te spelen met containers (Docker en ACI), ML en Python.
+Een POC om te spelen met containers (Docker en ACI), ML en Python.<br>
 Train een logistisch regressie model en implementeer die in een docker container. De container kan in Docker worden gedraaid en in Azure Cloud (Azure Cloud Instance, ACI).
 
 ## Instructies
@@ -11,9 +11,9 @@ Train een logistisch regressie model en implementeer die in een docker container
 
 ### Voer uit:
 ```
-git clone https://github.com/MarcelSiebes/container_ml.git
 conda create -name logistische_regressie
 conda activate logistische_regressie
+git clone https://github.com/MarcelSiebes/container_ml.git
 cd workdir_model_training
 pip install -r conda_requirements.txt
 python logistische-regressie.py
