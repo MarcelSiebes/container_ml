@@ -1,4 +1,8 @@
 # Instructies
+
+## Doel
+Een POC om te spelen met containers (Docker en ACI), ML en Python: Train een logistisch regressie model en implementeer die in een docker container
+
 ## Vooraf installeren:
 - Docker Desktop
 - Anaconda
