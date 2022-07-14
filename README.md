@@ -1,14 +1,15 @@
-# Instructies
+# Doel
+Een POC om te spelen met containers (Docker en ACI), ML en Python.
+Train een logistisch regressie model en implementeer die in een docker container. De container kan in Docker worden gedraaid en in Azure Cloud (Azure Cloud Instance, ACI).
 
-## Doel
-Een POC om te spelen met containers (Docker en ACI), ML en Python. Train een logistisch regressie model en implementeer die in een docker container. De container kan in Docker worden gedraaid en in Azure Cloud, Azure Cloud Instance (ACI).
+## Instructies
 
-## Vooraf installeren:
+### Vooraf installeren:
 - Docker Desktop
 - Anaconda
 - VSCode
 
-## Voer uit:
+### Voer uit:
 ```
 git clone https://github.com/MarcelSiebes/container_ml.git
 conda create -name logistische_regressie
@@ -19,7 +20,7 @@ python logistische-regressie.py
 cp logistische-regressie.pkl ../app
 ```
 
-## En dan nu:
+### En dan nu:
 Build de docker container vanuit VSCode (rechter muisklik op de Dockerfile en selecteer *Build Image*)<br>
 Gebruik de Docker extensie in VSCode om het image testen in Docker Desktop.
 - Start de container
@@ -30,7 +31,7 @@ Dit levert als het goed is gegaan de volgende output: ```{"message":"FastAPI zeg
 Je kan ook direct gebruik maken van de Swagger UI: `http://127.0.0.1:8000/docs`<br>
 Vanuit de getoonde UI kan de API worden getest.
 
-## ACI
+### ACI
 ### Deployment van de container
 De container kan eenvoudig in Azure worden uitgerold.<br>
 Kies na inloggen op de homepage van de Azure Portal voor *Container Instances* en werk door de formulieren heen.<br><br>
@@ -57,7 +58,7 @@ Voor de ingevulde waarden heeft het model voorspeld dat het een goed bankbiljet 
 
 Voor meer informatie over het gebruik van [FastAPI](https://fastapi.tiangolo.com/ "FastAPI documentatie") is goede documentatie beschikbaar.
 
-### Data set
+### De Data set
 De dataset komt van de UCI Machine Learning Repository:
 
 https://archive.ics.uci.edu/ml/datasets/banknote+authentication
