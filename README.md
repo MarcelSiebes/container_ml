@@ -1,7 +1,7 @@
 # Instructies
 
 ## Doel
-Een POC om te spelen met containers (Docker en ACI), ML en Python: Train een logistisch regressie model en implementeer die in een docker container
+Een POC om te spelen met containers (Docker en ACI), ML en Python. Train een logistisch regressie model en implementeer die in een docker container. De container kan in Docker worden gedraaid en in Azure Cloud (ACI).
 
 ## Vooraf installeren:
 - Docker Desktop
