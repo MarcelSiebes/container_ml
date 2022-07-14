@@ -44,7 +44,7 @@ Belangrijk! Voeg bij Networking poort *8000/tcp* toe, hierop luistert de app in 
 Klik op *Go to resource*. Op het volgende scherm in de rechter kolom vind je de FQDN om de container te kunnen benaderen. In dit voorbeeld:<br><br>
 ![image](https://user-images.githubusercontent.com/57792298/178725927-991438a9-f87b-45cc-86da-dd881635638f.png)<br><br>
 Je kan de container dus aanroepen met: `http://containerpoc.westeurope.azurecontainer.io:8000/`<br>
-De aanroep naar de root context zal een simpele boodschap tonen; ```{"message":"FastAPI zegt Hallo Wereld"}```. Om het model te testen is de eenvoudigste methode om de de API call via de Swagger UI ```/docs``` uit te voeren. Met curl kom je er ook. De swagger UI geeft hiervoor een voorbeeld na het aanroepen van de API.<br><br>
+De aanroep naar de root context zal weer de simpele boodschap tonen; ```{"message":"FastAPI zegt Hallo Wereld"}```. Om het model te testen is de eenvoudigste methode om de de API call via de Swagger UI (```/docs```) uit te voeren. Met curl kom je er ook. De swagger UI geeft hiervoor een voorbeeld na het aanroepen van de API.<br><br>
 ![image](https://user-images.githubusercontent.com/57792298/178722957-3232853e-1889-4d1a-8180-adfa48c324be.png)<br><br>
 
 ### Gebruik van de container
