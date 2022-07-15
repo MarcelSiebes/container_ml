@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag containerml:$(date +%s)
+      run: docker build . --file ~/Documents/Python Projecten/container_ml/Dockerfile --tag containerml:$(date +%s)
