@@ -1,6 +1,5 @@
 #
 # Deze file is een aangepaste versie van de door VSCode gegenereerde versie.
-# Vanaf nu alleen gebruiken in Github Actions workflows.
 #
 FROM python:3.9-slim
 
