@@ -8,7 +8,7 @@ MLOps POC - Train, volledig geautomatiseerd, een (logistisch regressie) model en
 - Azure Container Registry
 - Cloud Shell (eventueel een storage account hiervoor inrichten)
 
-### Voer uit:
+#### Voer uit:
 - Haal het resource ID van de resource group op waarin de Azure Container Registry is gedefinieerd
 ```
 az group show --name <RESOURCE GROUP NAAM> --query id --output tsv
