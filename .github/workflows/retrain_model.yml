@@ -1,4 +1,4 @@
-name: Retrain Model
+name: Retrain Model Workflow
 
 on:
   workflow_dispatch:
