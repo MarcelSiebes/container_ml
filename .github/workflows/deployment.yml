@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: ["Retrain Model"]
+    workflows: ["Retrain Model Workflow"]
     types:
       - completed
   push:
@@ -9,7 +9,7 @@ on:
       - 'app/**'
   workflow_dispatch:
     
-name: Container POC Deployment Workflow
+name: Container Deployment Workflow
 
 jobs:
     build-and-deploy:
