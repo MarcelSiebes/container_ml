@@ -8,8 +8,6 @@ on:
       - 'workdir_model_training/**.txt'
       - 'workdir_model_training/data/BankNote_Authentication.csv'
   delete:
-    paths:
-      - 'workdir_model_training/logistische-regressie.pkl'
 
 jobs:
   build:
