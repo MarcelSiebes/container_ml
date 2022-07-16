@@ -13,7 +13,7 @@ import uvicorn
 from fastapi import FastAPI
 import pickle
 
-# Class definitie met daarin de call parameters, handig voor pydantic
+# Class definitie met daarin de call parameters, handig voor pydantic.
 from bankbiljetten import bankbiljet
 
 # Definieer een FastAPI applicatie
@@ -24,7 +24,7 @@ logistische_regressie_pickle = open("logistische-regressie.pkl", "rb")
 logistische_regressie = pickle.load(logistische_regressie_pickle)
 
 #
-# Decorators voor de verschillende API call definities
+# De verschillende API call definities
 #
 
 # Een test API call
