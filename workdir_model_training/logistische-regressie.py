@@ -12,7 +12,7 @@ from sklearn.linear_model import LogisticRegressionCV
 import pickle
 
 # Lees de data en sla die op in een pandas dataframe
-df = pd.read_csv("data/BankNote_Authentication.csv")
+df = pd.read_csv("workdir_model_training/data/BankNote_Authentication.csv")
 
 # Eerst wat elementaire data iinzichten tonen
 print(df.shape)
