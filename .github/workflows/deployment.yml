@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: ["Retrain Model Workflow"]
+    workflows: ["Retrain Model Workflow", "CodeQL"]
     types:
       - completed
   push:
