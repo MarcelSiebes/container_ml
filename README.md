@@ -52,7 +52,7 @@ Er zijn twee workflows gedefinieerd met Github Actions. In de onderstaande tabel
 |                               | Aanpassing aan de bestanden in de app directory | Geen |
 | CodeQL | Ieder push en pull-request naar de main branch | Geen    |
 
-Beide workflows kunnen ook handmatig worden gestart. De Retrain Model Workflow zal ook dan altijd worden gevolgd door de Container Deployment Workflow.
+Alle workflows kunnen ook handmatig worden gestart. De Retrain Model Workflow zal ook bij het handmatig starten altijd worden gevolgd door de Container Deployment Workflow.
 
 
 ### Gebruik van de container
