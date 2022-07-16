@@ -55,7 +55,7 @@ Er zijn drie workflows gedefinieerd met Github Actions. In de onderstaande tabel
 |              | Verwijdering van het getrainde model | Container Deployment Workflow |
 | Container Deployment Workflow | Aanpassing Dockerfile | Geen |
 |                               | Aanpassing aan de bestanden in de app directory | Geen |
-| CodeQL | Ieder push en pull-request naar de main branch | Geen    |
+| CodeQL | Iedere push en pull-request naar de main branch | Geen    |
 
 Alle workflows kunnen ook handmatig worden gestart. De Retrain Model Workflow zal ook bij het handmatig starten altijd worden gevolgd door de Container Deployment Workflow.
 
