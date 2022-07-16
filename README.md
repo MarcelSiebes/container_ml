@@ -48,6 +48,7 @@ Voeg de onderstaande secrets toe in Github (Settings -> Secrets -> Actions)
 
 ### Use cases van de workflows:
 Er zijn drie workflows gedefinieerd met Github Actions. In de onderstaande tabel zijn de triggers uiteengezet.
+
 | **Workflow**        | **Trigger**         |
 | ------------------- | -------------------- |
 | CodeQL | Aanpassing aan de python source, data, dockerfile of requirements files|
