@@ -48,16 +48,13 @@ Voeg de onderstaande secrets toe in Github (Settings -> Secrets -> Actions)
 
 ### Use cases van de workflows:
 Er zijn drie workflows gedefinieerd met Github Actions. In de onderstaande tabel zijn de triggers uiteengezet.
-| **Workflow**        | **Triggers**         | **Vervolg Actie**   |
-| ------------------- | -------------------- | ------------------- |
-| Retrain Model Workflow | Nieuwe data of data aanpassing | Container Deployment Workflow |
-|              | Aanpassing aan de python source | Container Deployment Workflow |
-|              | Aanpassing aan de requirements file | Container Deployment Workflow |
-| Container Deployment Workflow | Aanpassing Dockerfile | Geen |
-|                               | Aanpassing aan de bestanden in de app directory | Geen |
-| CodeQL | Iedere push en pull-request naar de main branch van python sources| Geen    |
+| **Workflow**        | **Triggers**         |
+| ------------------- | -------------------- |
+| CodeQL | Aanpassing aan de python source, data, dockerfile of requirements files|
+| Retrain Model Workflow | CodeQL |
+| Container Deployment Workflow | Retrain Model Workflow |
 
-Alle workflows kunnen ook handmatig worden gestart. De Retrain Model Workflow zal ook bij het handmatig starten altijd worden gevolgd door de Container Deployment Workflow.
+Alle workflows kunnen handmatig worden gestart maar triggeren altijd een volgende workflow indien die gedefinieerd is.
 
 
 ### Gebruik van de container
