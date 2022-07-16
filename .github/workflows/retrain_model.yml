@@ -7,7 +7,6 @@ on:
       - 'workdir_model_training/**.py'
       - 'workdir_model_training/**.txt'
       - 'workdir_model_training/data/BankNote_Authentication.csv'
-  delete:
 
 jobs:
   build:
