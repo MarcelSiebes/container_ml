@@ -1,0 +1,31 @@
+name: "MLOps workflow - Build Model"
+
+on:
+  workflow_run:
+    workflows: ["MLOps workflow - Analyze Code"]
+    types: [completed]
+  # maak handmatig starten van de workflow ook mogelijk
+  workflow_dispatch:
+
+jobs:
+  build_model:
+    name: Train the logistic regression model
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      # install the libs, train the model and push the serialized object to github
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Retrain the model
+        run: python workdir_model_training/logistische-regressie.py
+      - name: Copy the file from the runner to the repo
+        run: |
+          git config --global user.email "marcel@siebes.nl"
+          git config --global user.name "MarcelSiebes"
+          git add workdir_model_training/logistische-regressie.pkl
+          git commit -m "new trained model"
+          git push
