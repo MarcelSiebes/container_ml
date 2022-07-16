@@ -69,7 +69,8 @@ Klik op *Try it out* en vul wat getallen in (dat mogen integers en floats zijn).
 ![image](https://user-images.githubusercontent.com/57792298/178727631-9d2197d4-38f6-4f8c-9e35-dab46781b736.png)<br><br>
 Klik daarna op *Execute* en scrol een stukje naar beneden totdat je de server response ziet.<br><br>
 ![image](https://user-images.githubusercontent.com/57792298/178727910-00db5d50-ebb8-4ad5-b48f-1b70ae07332f.png)<br><br>
-Voor de ingevulde waarden heeft het model voorspeld dat het een goed bankbiljet is.
+Voor de ingevulde waarden heeft het model voorspeld dat het een goed bankbiljet is.<br><br>
+![image](https://user-images.githubusercontent.com/57792298/179358907-05ca276e-6e2f-483b-893b-f975ccb8d598.png)
 
 Voor meer informatie over het gebruik van [FastAPI](https://fastapi.tiangolo.com/ "FastAPI documentatie") is goede documentatie beschikbaar.
 
