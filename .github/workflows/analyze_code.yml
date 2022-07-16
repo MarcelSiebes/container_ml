@@ -16,7 +16,6 @@ on:
 jobs:
   # analiseer de python source op vulnerabilities
   analyze_code:
-    # voorkom parallel jobs
     name: Analyze
     runs-on: ubuntu-latest
     permissions:
