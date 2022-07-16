@@ -1,6 +1,6 @@
 # Doel
-Een POC om te spelen met containers in ACI, ML, Python en Github Actions.<br>
-Train volledig geautomatiseerd een (logistisch regressie) model en implementeer die in ACI.
+POC - Train, volledig geautomatiseerd, een (logistisch regressie) model en implementeer die in ACI. Hierbij wordt gebruik gemaakt van docker containers in ACI en Github Actions.<br>
+
 
 ## Instructies
 
