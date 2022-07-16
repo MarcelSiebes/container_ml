@@ -18,7 +18,7 @@ jobs:
   analyze:
     # voorkom parallel jobs
     concurrency:
-      group: ${{ github.workflow }}
+      group: mlops_workflow
       cancel-in-progress: true
     name: Analyze
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
   build:
     # voorkom parallel jobs
     concurrency:
-      group: ${{ github.workflow }}
+      group: mlops_workflow
       cancel-in-progress: true
     name: Train the logistic regression model
     runs-on: ubuntu-latest
@@ -71,7 +71,7 @@ jobs:
   build-and-deploy:
     # voorkom parallel jobs
     concurrency:
-      group: ${{ github.workflow }}
+      group: mlops_workflow
       cancel-in-progress: true
     name: build the docker image and deploy it to Azure
     runs-on: ubuntu-latest
