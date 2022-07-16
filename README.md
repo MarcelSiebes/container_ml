@@ -34,39 +34,24 @@ Voeg de onderstaande secrets toe in Github (Settings -> Secrets -> Actions)
 
 | **Secret**        | **Value**         |
 | ----------------- |:-----------------:|
-| AZURE_CREDENTIALS| 	The entire JSON output from the service principal creation step |
-| REGISTRY_LOGIN_SERVER| 	The login server name of your registry (all lowercase). Example: myregistry.azurecr.io |
-| REGISTRY_USERNAME| 	The clientId from the JSON output from the service principal creation |
-| REGISTRY_PASSWORD| 	The clientSecret from the JSON output from the service principal creation |
-| RESOURCE_GROUP| 	The name of the resource group you used to scope the service principal |
+| AZURE_CREDENTIALS| 	De complete JSON uit de service principal stap |
+| REGISTRY_LOGIN_SERVER| 	De login server naam van de registry |
+| REGISTRY_USERNAME| 	Het clientId uit de JSON uit de service principal stap |
+| REGISTRY_PASSWORD| 	Het clientSecret uit de JSON uit de service principal stap |
+| RESOURCE_GROUP| 	De naam van de resource group gebruikt in de scope van de service principal |
 
 
-### En dan nu:
-Build de docker container vanuit VSCode (rechter muisklik op de Dockerfile en selecteer *Build Image*)<br>
-Gebruik de Docker extensie in VSCode om het image testen in Docker Desktop.
-- Start de container
-- Open een browser
+### Use cases van de workflows:
+Er zijn twee workflows gedefinieerd met Github Actions. In de onderstaande tabel zijn de triggers uiteengezet.
+| **Workflow**        | **Triggers**         | **Vervolg Actie**   |
+| ----------------- |:-----------------:|:-----------------:|
+| Retrain Model Workflow | Nieuwe data of data aanpassing | Container Deployment Workflow |
+|              | Aanpassing Python script, requirements | Container Deployment Workflow |
+|              | Verwijdering van het getrainde model | Container Deployment Workflow |
+| Container Deployment Workflow | Aanpassing Dockerfile | Geen |
+|                               | Aanpassing aan de bestanden in de app directory | Geen |
+Beide workflows kunnen ook handmatig worden gestart. De Retrain Model Workflow zal ook dan altijd worden gevolgd door de Container Deployment Workflow.
 
-Je kunt nu een test API call uitvoeren om te bepalen of FastAPI werkt: `http://127.0.0.1:8000/`<br>
-Dit levert als het goed is gegaan de volgende output: ```{"message":"FastAPI zegt Hallo Wereld"}```<br>
-Je kan ook direct gebruik maken van de Swagger UI: `http://127.0.0.1:8000/docs`<br>
-Vanuit de getoonde UI kan de API worden getest.
-
-### ACI
-### Deployment van de container
-De container kan eenvoudig in Azure worden uitgerold.<br>
-Kies na inloggen op de homepage van de Azure Portal voor *Container Instances* en werk door de formulieren heen.<br><br>
-![image](https://user-images.githubusercontent.com/57792298/178724259-95822596-65dd-4107-9498-d07c2c46da26.png)<br><br><br>
-![image](https://user-images.githubusercontent.com/57792298/178724437-893c810b-0a1c-4d15-8508-8b815f6681f6.png)<br><br><br>
-![image](https://user-images.githubusercontent.com/57792298/178724937-980237a4-4fc9-43c3-8af1-7ff265ff99d0.png)<br><br><br>
-![image](https://user-images.githubusercontent.com/57792298/178725083-46d3cfb7-5e8a-4789-8e3b-24143d993a33.png)<br><br>
-Belangrijk! Voeg bij Networking poort *8000/tcp* toe, hierop luistert de app in de container. Port mappings zoals in Docker zijn in Azure Container Instances (nog) niet mogelijk. Vergeet ook niet een *DNS name label* op te geven zodat je de container kan aanroepen. Hierna kan je op *Review + create* klikken en na de validatie op *Create*. Het kan soms even duren voordat de container is gedeployed. Er zal een resource group worden gemaakt met daarin de container instance.<br><br>
-![image](https://user-images.githubusercontent.com/57792298/178725661-f0133755-de4f-4228-a383-7a5d8f21bc28.png)<br><br>
-Klik op *Go to resource*. Op het volgende scherm in de rechter kolom vind je de FQDN om de container te kunnen benaderen. In dit voorbeeld:<br><br>
-![image](https://user-images.githubusercontent.com/57792298/178725927-991438a9-f87b-45cc-86da-dd881635638f.png)<br><br>
-Je kan de container dus aanroepen met: `http://containerpoc.westeurope.azurecontainer.io:8000/`<br>
-De aanroep naar de root context zal weer de simpele boodschap tonen; ```{"message":"FastAPI zegt Hallo Wereld"}```. Om het model te testen is de eenvoudigste methode om de de API call via de Swagger UI (```/docs```) uit te voeren. Met curl kom je er ook. De swagger UI geeft hiervoor een voorbeeld na het aanroepen van de API.<br><br>
-![image](https://user-images.githubusercontent.com/57792298/178722957-3232853e-1889-4d1a-8180-adfa48c324be.png)<br><br>
 
 ### Gebruik van de container
 Om de API call te kunnen testen klik je op ```POST /predict Predict Bankbiljet``` balk.<br><br>
