@@ -35,4 +35,4 @@ jobs:
             registry-password: ${{ secrets.REGISTRY_PASSWORD }}
             name: aci-containerpoc
             location: 'west us'
-            ports:80 8000
+            ports: 80 8000
