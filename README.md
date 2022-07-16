@@ -1,24 +1,45 @@
 # Doel
-Een POC om te spelen met containers (Docker en ACI), ML en Python.<br>
-Train een logistisch regressie model en implementeer die in een docker container. De container kan in Docker worden gedraaid en in Azure Cloud (Azure Cloud Instance, ACI).
+Een POC om te spelen met containers in ACI, ML, Python en Github Actions.<br>
+Train volledig geautomatiseerd een (logistisch regressie) model en implementeer die in ACI.
 
 ## Instructies
 
-### Vooraf installeren:
-- Docker Desktop
-- Anaconda
-- VSCode
+### Vooraf regelen:
+- Azure Container Registry
+- Cloud Shell (eventueel een storage account hiervoor inrichten)
 
 ### Voer uit:
+- Haal het resource ID van de resource group op
 ```
-conda create -name logistische_regressie
-conda activate logistische_regressie
-git clone https://github.com/MarcelSiebes/container_ml.git
-cd workdir_model_training
-pip install -r conda_requirements.txt
-python logistische-regressie.py
-cp logistische-regressie.pkl ../app
+az group show --name <RESOURCE GROUP NAAM> --query id --output tsv
 ```
+
+- Maak een Service Principle
+```
+az ad sp create-for-rbac --scope <RESOURCE ID> --role Contributor --sdk-auth
+```
+Bewaar de JSON uitvoer, die is nog nodig.
+
+- Haal het resource ID op van de container registry
+```
+az acr show --name <CONTAINER REGISTRY NAAM> --query id --output tsv
+```
+
+- Koppel de AcrPush role (geeft push en pull toegang op de registry)
+```
+az role assignment create --assignee <CLIENT ID> --scope <REGISTRY ID> --role AcrPush
+```
+
+Voeg de onderstaande secrets toe in Github (Settings -> Secrets -> Actions)
+
+| **Secret**        | **Value**         |
+| ----------------- |:-----------------:|
+| AZURE_CREDENTIALS| 	The entire JSON output from the service principal creation step |
+| REGISTRY_LOGIN_SERVER| 	The login server name of your registry (all lowercase). Example: myregistry.azurecr.io |
+| REGISTRY_USERNAME| 	The clientId from the JSON output from the service principal creation |
+| REGISTRY_PASSWORD| 	The clientSecret from the JSON output from the service principal creation |
+| RESOURCE_GROUP| 	The name of the resource group you used to scope the service principal |
+
 
 ### En dan nu:
 Build de docker container vanuit VSCode (rechter muisklik op de Dockerfile en selecteer *Build Image*)<br>
