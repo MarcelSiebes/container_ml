@@ -45,7 +45,7 @@ logistische_regressie.fit(X_train, y_train)
 # Predict de target van de test set
 y_pred = logistische_regressie.predict(X_test)
 
-# Bepaal de AUC score en de confusion matrix
+# Bepaal de AUC score, classificatie rapport en de confusion matrix
 score = roc_auc_score(y_test, y_pred)
 print("AUC Score {}", score)
 print(classification_report(y_test, y_pred))
