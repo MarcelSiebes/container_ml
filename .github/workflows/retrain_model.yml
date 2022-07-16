@@ -23,6 +23,9 @@ jobs:
         run: python workdir_model_training/logistische-regressie.py
       - name: Copy the file from the runner to the repo
         run: |
+          git config --global user.email "marcel@siebes.nl"
+          git config --global user.name "MarcelSiebes"
           git add logistische-regressie.pkl
           git commit -m "new trained model"
           git push
+          
