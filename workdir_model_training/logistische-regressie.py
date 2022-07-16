@@ -35,7 +35,7 @@ df_norm.describe()
 X = df_norm.iloc[:,:-1]
 y = df_norm.iloc[:,-1]
 
-# Split de data in een training en test set:. 70% training en 30% test.
+# Split de data in een training en test set:. 70% training en 30% test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 0)
 
 # Implementeer Logistische Regressie met ingebouwde cross-validation
