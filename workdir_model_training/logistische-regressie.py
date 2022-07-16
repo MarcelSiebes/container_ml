@@ -53,6 +53,6 @@ print("Confusion Matrix:")
 print(confusion_matrix(y_test, y_pred))
 
 # Maak een Pickle file (serialization) voor gebruik in de container
-pickle_file = open("logistische-regressie.pkl", "wb")
+pickle_file = open("workdir_model_training/logistische-regressie.pkl", "wb")
 pickle.dump(logistische_regressie, pickle_file)
 pickle_file.close()
