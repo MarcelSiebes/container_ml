@@ -14,7 +14,7 @@ import pickle
 # Lees de data en sla die op in een pandas dataframe
 df = pd.read_csv("workdir_model_training/data/BankNote_Authentication.csv")
 
-# Eerst wat elementaire data iinzichten tonen
+# Eerst wat elementaire data inzichten tonen
 print(df.shape)
 print(df.info())
 print(df.describe())
@@ -35,7 +35,7 @@ df_norm.describe()
 X = df_norm.iloc[:,:-1]
 y = df_norm.iloc[:,-1]
 
-# Split de data in een training en test set:. 70% training en 30% test
+# Split de data in een training en test set: 70% training en 30% test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 0)
 
 # Implementeer Logistische Regressie met ingebouwde cross-validation
@@ -52,7 +52,7 @@ print(classification_report(y_test, y_pred))
 print("Confusion Matrix:")
 print(confusion_matrix(y_test, y_pred))
 
-# Maak een Pickle file (serialization) voor gebruik in de container
+# Maak een Pickle file van het getrainde model voor gebruik in de container
 pickle_file = open("workdir_model_training/logistische-regressie.pkl", "wb")
 pickle.dump(logistische_regressie, pickle_file)
 pickle_file.close()
