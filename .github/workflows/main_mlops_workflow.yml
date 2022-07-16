@@ -10,12 +10,16 @@ on:
       - 'Dockerfile'
       - 'requirements.txt'
       - 'app/**.py'
-  # maak handmatif starten van de workflow ook mogelijk
+  # maak handmatig starten van de workflow ook mogelijk
   workflow_dispatch:
 
 jobs:
   # analiseer de python source op vulnerabilities
   analyze:
+    # voorkom parallel jobs
+    concurrency:
+      group: ${{ github.workflow }}
+      cancel-in-progress: true
     name: Analyze
     runs-on: ubuntu-latest
     permissions:
@@ -39,6 +43,10 @@ jobs:
       uses: github/codeql-action/analyze@v2
 
   build:
+    # voorkom parallel jobs
+    concurrency:
+      group: ${{ github.workflow }}
+      cancel-in-progress: true
     name: Train the logistic regression model
     runs-on: ubuntu-latest
     steps:
@@ -61,6 +69,10 @@ jobs:
           git push
 
   build-and-deploy:
+    # voorkom parallel jobs
+    concurrency:
+      group: ${{ github.workflow }}
+      cancel-in-progress: true
     name: build the docker image and deploy it to Azure
     runs-on: ubuntu-latest
     steps:
@@ -89,5 +101,5 @@ jobs:
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           name: aci-containerpoc
-          location: 'west europe'
+          location: 'west us'
           ports: 80 8000
