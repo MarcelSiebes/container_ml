@@ -1,5 +1,10 @@
-on: [push]
-name: Container_POC_Workflow
+on:
+  workflow_run:
+    workflows: ["Retrain Model"]
+    types:
+      - completed
+
+name: Container POC Deployment Workflow
 
 jobs:
     build-and-deploy:
