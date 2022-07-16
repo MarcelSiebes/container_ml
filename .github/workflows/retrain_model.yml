@@ -1,4 +1,4 @@
-name: Train model
+name: Retrain Model
 
 on:
   push:
