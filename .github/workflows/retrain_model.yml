@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'workdir_model_training/data/BankNote_Authentication.csv'
+      - 'workdir_model_training/**'
 
 jobs:
   build:
