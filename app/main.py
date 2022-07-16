@@ -13,7 +13,7 @@ import uvicorn
 from fastapi import FastAPI
 import pickle
 
-# Class definitie met daarin de call parameters, handig voor pydantic.
+# Class definitie met daarin de call parameters, handig voor pydantic
 from bankbiljetten import bankbiljet
 
 # Definieer een FastAPI applicatie
