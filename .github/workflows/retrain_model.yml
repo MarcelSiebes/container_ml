@@ -21,3 +21,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Retrain the model
         run: python workdir_model_training/logistische-regressie.py
+      - name: Copy the file from the runner to the repo
+        run: |
+          git add logistische-regressie.pkl
+          git commit -m "new trained model"
+          git push
