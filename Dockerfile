@@ -1,5 +1,5 @@
 #
-# Deze file is een aangepaste versie van de door VSCode gegenereerde versie.
+# Deze file is een aangepaste versie van de door VSCode gegenereerde versie
 #
 FROM python:3.9-slim
 
