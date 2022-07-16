@@ -1,4 +1,6 @@
-# Doel
+# MLOps POC met Github Actions en Azure Container Instances
+
+## Doel
 MLOps POC - Train een ML model en implementeer die in ACI. Hierbij wordt gebruik gemaakt van een docker container in ACI en Github Actions. In Azure moet een container registry aanwezig zijn. Er zijn daarom eerst wat voorbereidingen noodzakelijk.<br>
 De code bevat een eenvoudige logistische regressie. Het model is getraind met een UCI dataset. Deze dataset bevat gegevens die verkregen zijn door met een een wavelet transformatie tool features te extraheren van foto's van bankbiljetten. De set bestaat uit gegevens van valse en niet valse bankbiljetten.
 Het model zal aan de hand van waardes die worden meegegeven aan vier parameters proberen te bepalen of een bankbiljet vals is of niet. Deze parameters zijn:
