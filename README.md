@@ -33,23 +33,24 @@ az role assignment create --assignee <CLIENT ID> --scope <REGISTRY ID> --role Ac
 Voeg de onderstaande secrets toe in Github (Settings -> Secrets -> Actions)
 
 | **Secret**        | **Value**         |
-| ----------------- |:-----------------:|
-| AZURE_CREDENTIALS| 	De complete JSON uit de service principal stap |
-| REGISTRY_LOGIN_SERVER| 	De login server naam van de registry |
-| REGISTRY_USERNAME| 	Het clientId uit de JSON uit de service principal stap |
-| REGISTRY_PASSWORD| 	Het clientSecret uit de JSON uit de service principal stap |
-| RESOURCE_GROUP| 	De naam van de resource group gebruikt in de scope van de service principal |
+| ----------------- |-------------------|
+| AZURE_CREDENTIALS | De complete JSON uit de service principal stap |
+| REGISTRY_LOGIN_SERVER | De login server naam van de registry |
+| REGISTRY_USERNAME | Het clientId uit de JSON uit de service principal stap |
+| REGISTRY_PASSWORD | Het clientSecret uit de JSON uit de service principal stap |
+| RESOURCE_GROUP | De naam van de resource group gebruikt in de scope van de service principal |
 
 
 ### Use cases van de workflows:
 Er zijn twee workflows gedefinieerd met Github Actions. In de onderstaande tabel zijn de triggers uiteengezet.
 | **Workflow**        | **Triggers**         | **Vervolg Actie**   |
-| ----------------- |:-----------------:|:-----------------:|
+| ------------------- | -------------------- | ------------------- |
 | Retrain Model Workflow | Nieuwe data of data aanpassing | Container Deployment Workflow |
 |              | Aanpassing Python script, requirements | Container Deployment Workflow |
 |              | Verwijdering van het getrainde model | Container Deployment Workflow |
 | Container Deployment Workflow | Aanpassing Dockerfile | Geen |
 |                               | Aanpassing aan de bestanden in de app directory | Geen |
+
 Beide workflows kunnen ook handmatig worden gestart. De Retrain Model Workflow zal ook dan altijd worden gevolgd door de Container Deployment Workflow.
 
 
