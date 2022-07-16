@@ -42,7 +42,7 @@ Voeg de onderstaande secrets toe in Github (Settings -> Secrets -> Actions)
 
 
 ### Use cases van de workflows:
-Er zijn twee workflows gedefinieerd met Github Actions. In de onderstaande tabel zijn de triggers uiteengezet.
+Er zijn drie workflows gedefinieerd met Github Actions. In de onderstaande tabel zijn de triggers uiteengezet.
 | **Workflow**        | **Triggers**         | **Vervolg Actie**   |
 | ------------------- | -------------------- | ------------------- |
 | Retrain Model Workflow | Nieuwe data of data aanpassing | Container Deployment Workflow |
