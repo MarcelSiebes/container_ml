@@ -1,12 +1,11 @@
 name: Retrain Model Workflow
 
 on:
+  workflow_run:
+    workflows: ["CodeQL"]
+    types:
+      - completed
   workflow_dispatch:
-  push:
-    paths:
-      - 'workdir_model_training/**.py'
-      - 'workdir_model_training/**.txt'
-      - 'workdir_model_training/data/BankNote_Authentication.csv'
 
 jobs:
   build:

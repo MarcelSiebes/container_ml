@@ -1,16 +1,11 @@
+name: Container Deployment Workflow
+
 on:
   workflow_run:
-    workflows: ["Retrain Model Workflow", "CodeQL"]
+    workflows: ["Retrain Model Workflow"]
     types:
       - completed
-  push:
-    paths:
-      - 'Dockerfile'
-      - 'requirements.txt'
-      - 'app/**.py'
   workflow_dispatch:
-    
-name: Container Deployment Workflow
 
 jobs:
     build-and-deploy:

@@ -13,15 +13,13 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "main" ]
     paths:
       - 'workdir_model_training/**.py'
+      - 'workdir_model_training/**.txt'
+      - 'workdir_model_training/data/BankNote_Authentication.csv'
+      - 'Dockerfile'
+      - 'requirements.txt'
       - 'app/**.py'
-#  pull_request:
-    # The branches below must be a subset of the branches above
-#    branches: [ "main" ]
-#  schedule:
-#    - cron: '28 22 * * 1'
   workflow_dispatch:
 
 jobs:
