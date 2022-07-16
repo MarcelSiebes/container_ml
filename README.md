@@ -46,7 +46,7 @@ Er zijn twee workflows gedefinieerd met Github Actions. In de onderstaande tabel
 | **Workflow**        | **Triggers**         | **Vervolg Actie**   |
 | ------------------- | -------------------- | ------------------- |
 | Retrain Model Workflow | Nieuwe data of data aanpassing | Container Deployment Workflow |
-|              | Aanpassing Python script, requirements | Container Deployment Workflow |
+|              | Aanpassing aan het python script of de requirements file | Container Deployment Workflow |
 |              | Verwijdering van het getrainde model | Container Deployment Workflow |
 | Container Deployment Workflow | Aanpassing Dockerfile | Geen |
 |                               | Aanpassing aan de bestanden in de app directory | Geen |
