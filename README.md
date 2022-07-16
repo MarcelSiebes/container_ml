@@ -1,5 +1,5 @@
 # Doel
-POC - Train, volledig geautomatiseerd, een (logistisch regressie) model en implementeer die in ACI. Hierbij wordt gebruik gemaakt van docker containers in ACI en Github Actions.<br>
+MLOps POC - Train, volledig geautomatiseerd, een (logistisch regressie) model en implementeer die in ACI. Hierbij wordt gebruik gemaakt van docker containers in ACI en Github Actions.<br>
 
 
 ## Instructies
