@@ -1,6 +1,7 @@
 name: Retrain Model
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'workdir_model_training/data/BankNote_Authentication.csv'
