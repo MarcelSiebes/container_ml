@@ -1,6 +1,11 @@
 # Doel
-MLOps POC - Train, volledig geautomatiseerd, een (logistisch regressie) model en implementeer die in ACI. Hierbij wordt gebruik gemaakt van een docker container in ACI en Github Actions.<br>
-
+MLOps POC - Train, volledig geautomatiseerd, een ML model en implementeer die in ACI. Hierbij wordt gebruik gemaakt van een docker container in ACI en Github Actions.<br>
+De code bevat een eenvoudige logistische regressie. Het model is getraind met een UCI dataset. Deze dataset bevat gegevens die verkregen zijn door met een een wavelet transformatie tool features te extraheren van foto's van bankbiljetten. De set bestaat uit gegevens van valse en niet valse bankbiljetten.
+Het model zal aan de hand van waardes die worden meegegeven aan vier parameters proberen te bepalen of een bankbiljet vals is of niet. Deze parameters zijn:
+- variance,
+- skewness,
+- curtosis,
+- entropy
 
 ## Instructies
 
