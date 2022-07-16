@@ -7,12 +7,21 @@ on:
     branches: [ "main" ]
 
 jobs:
-
-  build:
-
+  docker:
     runs-on: macos-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file ~/Documents/Python Projecten/container_ml/Dockerfile --tag containerml:$(date +%s)
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+        
+#  build:
+#
+#    runs-on: macos-latest
+#
+#    steps:
+#    - uses: actions/checkout@v3
+#    - name: Build the Docker image
+#      run: docker build . --file ~/Documents/Python Projecten/container_ml/Dockerfile --tag containerml:$(date +%s)
