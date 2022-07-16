@@ -72,5 +72,5 @@ Data Set Information:<br>
 Data were extracted from images that were taken from genuine and forged banknote-like specimens. For digitization, an industrial camera usually used for print inspection was used. The final images have 400x 400 pixels. Due to the object lens and distance to the investigated object gray-scale pictures with a resolution of about 660 dpi were gained. Wavelet Transform tool were used to extract features from images.
 
 ### Voor meer informatie:
-[Configure a GitHub Action to create a container instance](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-github-action)
+[Configure a GitHub Action to create a container instance](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-github-action)<br>
 [Azure/aci-deploy Github repository](https://github.com/Azure/aci-deploy)
