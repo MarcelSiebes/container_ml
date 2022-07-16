@@ -3,7 +3,12 @@ on:
     workflows: ["Retrain Model"]
     types:
       - completed
-
+  push:
+    paths:
+      - 'Dockerfile'
+      - 'app/**'
+  workflow_dispatch:
+    
 name: Container POC Deployment Workflow
 
 jobs:
