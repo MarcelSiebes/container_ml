@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  # train het model en push de pickle file naar de github repository
+  # train het model en push de pickle file naar de Github repository
   train_and_push_model:
     name: 'Train the logistic regression model'
     runs-on: ubuntu-latest
@@ -19,13 +19,13 @@ jobs:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v3
 
-      # gebruik python 9; hier is de code mee getest
+      # gebruik python 3.9; met deze versie is de code getest
       - name: 'Set up Python 3.9'
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
 
-      # installeer de modules vermeld in de requirements
+      # installeer de afhankelijkheden
       - name: 'Install dependencies'
         run: pip install -r workdir_model_training/requirements.txt
 
@@ -33,7 +33,7 @@ jobs:
       - name: 'Train the model'
         run: python workdir_model_training/logistische-regressie.py
 
-     # push de pickle file vanuit de runner naar de githun repository
+     # push de pickle file vanuit de runner naar de Github repository
       - name: 'Push the file pickle file'
         run: |
           git config --global user.email "marcel@siebes.nl"
