@@ -8,6 +8,8 @@ Het model zal aan de hand van waardes die worden meegegeven aan vier parameters 
 - skewness,
 - curtosis,
 - entropy
+Het reseach paper kan hier worden gevonden:
+https://www.researchgate.net/publication/266673146_Banknote_Authentication
 
 ## Instructies
 
