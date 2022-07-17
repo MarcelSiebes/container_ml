@@ -37,7 +37,6 @@ jobs:
         with:
           languages: python
 
-
       # start de code analyse
       - name: 'Perform CodeQL Analysis'
         uses: github/codeql-action/analyze@v2
