@@ -11,7 +11,7 @@ on:
 jobs:
   # train het model en push de pickle file naar de Github repository
   train_and_push_model:
-    name: 'Train the logistic regression model'
+    name: 'Train the model'
     runs-on: ubuntu-latest
 
     steps:
@@ -31,13 +31,13 @@ jobs:
 
       # train het model
       - name: 'Train the model'
-        run: python workdir_model_training/logistische-regressie.py
+        run: python workdir_model_training/model.py
 
      # push de pickle file vanuit de runner naar de Github repository
       - name: 'Push the file pickle file'
         run: |
           git config --global user.email "marcel@siebes.nl"
           git config --global user.name "MarcelSiebes"
-          git add workdir_model_training/logistische-regressie.pkl
+          git add workdir_model_training/model.pkl
           git commit -m "new trained model"
           git push

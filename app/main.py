@@ -21,8 +21,8 @@ from bankbiljetten import bankbiljet
 app = FastAPI()
 
 # Laadt het model in
-logistische_regressie_pickle = open("logistische-regressie.pkl", "rb")
-logistische_regressie = pickle.load(logistische_regressie_pickle)
+model_pickle = open("model.pkl", "rb")
+model = pickle.load(model_pickle)
 
 #
 # Een laat API call definities
@@ -44,7 +44,7 @@ def predict_bankbiljet(data:bankbiljet):
     entropy = data['entropy']
 
     # Doe de logistische regressie
-    prediction = logistische_regressie.predict([[variance, skewness, curtosis, entropy]])
+    prediction = model.predict([[variance, skewness, curtosis, entropy]])
 
     # Indien de uitkomst hoger dan 0.5 is dan verklaren we het bankbiljet vals
     if(prediction[0] > 0.5 ): prediction_result = "Vals bankbiljet"

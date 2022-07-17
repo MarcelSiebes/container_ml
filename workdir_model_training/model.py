@@ -8,7 +8,8 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score, confusion_matrix, classification_report
-from sklearn.linear_model import LogisticRegressionCV
+#from sklearn.linear_model import LogisticRegressionCV
+from sklearn.svm import SVC
 import pickle
 
 # Lees de data en sla die op in een pandas dataframe
@@ -39,11 +40,12 @@ y = df_norm.iloc[:,-1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 0)
 
 # Implementeer Logistische Regressie met ingebouwde cross-validation
-logistische_regressie = LogisticRegressionCV(cv=10)
-logistische_regressie.fit(X_train, y_train)
+# model = LogisticRegressionCV(cv=10)
+model = SVC(kernel='poly', degree=3)
+model.fit(X_train, y_train)
 
 # Predict de target van de test set
-y_pred = logistische_regressie.predict(X_test)
+y_pred = model.predict(X_test)
 
 # Bepaal de AUC score, classificatie rapport en de confusion matrix
 score = roc_auc_score(y_test, y_pred)
@@ -53,6 +55,6 @@ print("Confusion Matrix:")
 print(confusion_matrix(y_test, y_pred))
 
 # Maak een Pickle file van het getrainde model voor gebruik in de container
-pickle_file = open("workdir_model_training/logistische-regressie.pkl", "wb")
-pickle.dump(logistische_regressie, pickle_file)
+pickle_file = open("workdir_model_training/model.pkl", "wb")
+pickle.dump(model, pickle_file)
 pickle_file.close()
