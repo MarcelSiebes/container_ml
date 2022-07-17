@@ -3,7 +3,7 @@ name: "MLOps workflow - Build Image and Deploy"
 on:
   # start de workflow nadat er een model is gebouwd
   workflow_run:
-    workflows: ["MLOps workflow - Build Model"]
+    workflows: ["MLOps workflow - Train Model"]
     types: [completed]
   # maak handmatig starten van de workflow ook mogelijk
   workflow_dispatch:

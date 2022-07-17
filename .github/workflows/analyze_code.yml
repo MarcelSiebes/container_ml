@@ -1,4 +1,4 @@
-name: "MLOps workflow - Analyze Code"
+name: "MLOps workflow - Analyze Python Code"
 
 on:
   # start deze workflow zodra een van de opgegeven files wordt gepushd
@@ -36,7 +36,7 @@ jobs:
         uses: github/codeql-action/init@v2
         with:
           languages: python
-          
+
 
       # start de code analyse
       - name: 'Perform CodeQL Analysis'
