@@ -8,7 +8,6 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score, confusion_matrix, classification_report
-#from sklearn.linear_model import LogisticRegressionCV
 from sklearn.svm import SVC
 import pickle
 
@@ -39,8 +38,7 @@ y = df_norm.iloc[:,-1]
 # Split de data in een training en test set: 70% training en 30% test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 0)
 
-# Implementeer Logistische Regressie met ingebouwde cross-validation
-# model = LogisticRegressionCV(cv=10)
+# Implementeer een support vector machine met een poly kernel zoals in het artikel
 model = SVC(kernel='poly', degree=3)
 model.fit(X_train, y_train)
 
