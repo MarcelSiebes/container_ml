@@ -27,7 +27,7 @@ jobs:
 
       # installeer de modules vermeld in de requirements
       - name: 'Install dependencies'
-        run: pip install -r requirements.txt
+        run: pip install -r workdir_model_training/requirements.txt
 
       # train het model
       - name: 'Train the model'
