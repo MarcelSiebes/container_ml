@@ -1,7 +1,7 @@
 name: "MLOps workflow - Train Model"
 
 on:
-  # start deze workflow nadat de code door CodeQL is geanaliseerd
+  # start deze workflow nadat de code door CodeQL is geanalyseerd
   workflow_run:
     workflows: ["MLOps workflow - Analyze Python Code"]
     types: [completed]
