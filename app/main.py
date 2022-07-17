@@ -13,7 +13,8 @@ import uvicorn
 from fastapi import FastAPI
 import pickle
 
-# Class definitie met daarin de call parameters, handig voor pydantic
+# Class definitie met daarin de call parameters, pydantic is handig
+# https://pydantic-docs.helpmanual.io/
 from bankbiljetten import bankbiljet
 
 # Definieer een FastAPI applicatie
@@ -24,7 +25,7 @@ logistische_regressie_pickle = open("logistische-regressie.pkl", "rb")
 logistische_regressie = pickle.load(logistische_regressie_pickle)
 
 #
-# De verschillende API call definities
+# Een laat API call definities
 #
 
 # Een test API call
@@ -45,9 +46,9 @@ def predict_bankbiljet(data:bankbiljet):
     # Doe de logistische regressie
     prediction = logistische_regressie.predict([[variance, skewness, curtosis, entropy]])
 
-    # Indien de uitkomst hoger dan 0.5 is dan verklaren we het biljet vals
-    if(prediction[0] > 0.5 ): prediction_resultaat = "Vals bankbiljet"
-    else: prediction_resultaat = "Goed bankbiljet"
+    # Indien de uitkomst hoger dan 0.2 is dan verklaren we het bankbiljet vals
+    if(prediction[0] > 0.2 ): prediction_result = "Vals bankbiljet"
+    else: prediction_result = "Goed bankbiljet"
     return {
         'prediction': prediction_resultaat
     }
