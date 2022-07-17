@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  # analiseer de python source op vulnerabilities
+  # analyseer de python source op vulnerabilities
   analyze_code:
     name: 'Analyze'
     runs-on: ubuntu-latest
