@@ -1,11 +1,12 @@
 name: "MLOps workflow - Analyze Code"
 
 on:
+  # start deze workflow zodra een van de opgegeven files wordt gepushd
   push:
     paths:
       # trigger op deze bestanden
       - 'workdir_model_training/**.py'
-      - 'workdir_model_training/**.txt'
+      - 'workdir_model_training/requirements.txt'
       - 'workdir_model_training/data/BankNote_Authentication.csv'
       - 'Dockerfile'
       - 'requirements.txt'
@@ -16,24 +17,28 @@ on:
 jobs:
   # analiseer de python source op vulnerabilities
   analyze_code:
-    name: Analyze
+    name: 'Analyze'
     runs-on: ubuntu-latest
     permissions:
+      # eigenlijk alleen noodzakelijk voor private repo's
       actions: read
       contents: read
+      # noodzakelijk voor alle workflows
       security-events: write
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'python' ]
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: ${{ matrix.language }}
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v2
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      # checkout de code naar de Github workspace
+      - name: 'Checkout repository'
+        uses: actions/checkout@v3
+
+      # initialiseer de CodeQL code analizer voor python
+      - name: 'Initialize CodeQL'
+        uses: github/codeql-action/init@v2
+        with:
+          languages: python
+
+#      - name: 'Autobuild'
+#        uses: github/codeql-action/autobuild@v2
+      # start de code analyse
+      - name: 'Perform CodeQL Analysis'
+        uses: github/codeql-action/analyze@v2

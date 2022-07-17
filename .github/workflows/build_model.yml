@@ -1,6 +1,7 @@
 name: "MLOps workflow - Build Model"
 
 on:
+  # start deze workflow nadat de code door CodeQL is geanaliseerd
   workflow_run:
     workflows: ["MLOps workflow - Analyze Code"]
     types: [completed]
@@ -8,21 +9,32 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_model:
-    name: Train the logistic regression model
+  # train het model en push de pickle file naar de github repository
+  train_and_push_model:
+    name: 'Train the logistic regression model'
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python 3.9
+      # checkout de code naar de Github workspace
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v3
+
+      # gebruik python 9; hier is de code mee getest
+      - name: 'Set up Python 3.9'
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
-      # install the libs, train the model and push the serialized object to github
-      - name: Install dependencies
+
+      # installeer de modules vermeld in de requirements
+      - name: 'Install dependencies'
         run: pip install -r requirements.txt
-      - name: Retrain the model
+
+      # train het model
+      - name: 'Train the model'
         run: python workdir_model_training/logistische-regressie.py
-      - name: Copy the file from the runner to the repo
+
+     # push de pickle file vanuit de runner naar de githun repository
+      - name: 'Push the file pickle file'
         run: |
           git config --global user.email "marcel@siebes.nl"
           git config --global user.name "MarcelSiebes"
