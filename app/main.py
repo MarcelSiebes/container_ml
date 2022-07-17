@@ -46,11 +46,11 @@ def predict_bankbiljet(data:bankbiljet):
     # Doe de logistische regressie
     prediction = logistische_regressie.predict([[variance, skewness, curtosis, entropy]])
 
-    # Indien de uitkomst hoger dan 0.2 is dan verklaren we het bankbiljet vals
+    # Indien de uitkomst hoger dan 0.5 is dan verklaren we het bankbiljet vals
     if(prediction[0] > 0.5 ): prediction_result = "Vals bankbiljet"
     else: prediction_result = "Goed bankbiljet"
     return {
-        'prediction': prediction_resultaat
+        'prediction': prediction_result
     }
 
 # Main
