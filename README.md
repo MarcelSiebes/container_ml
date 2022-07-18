@@ -54,7 +54,7 @@ Voeg de onderstaande secrets toe in Github (Settings -> Secrets -> Actions)
 
 
 ### Triggers van de workflows:
-Er zijn drie workflows gedefinieerd met Github Actions. In de onderstaande tabel zijn de triggers uiteengezet.
+Er zijn drie workflows gedefinieerd in Github Actions. In de onderstaande tabel zijn de triggers uiteengezet.
 
 | **Workflow**        | **Trigger**         |
 | ------------------- | -------------------- |
