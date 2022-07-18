@@ -57,9 +57,9 @@ Er zijn drie workflows gedefinieerd met Github Actions. In de onderstaande tabel
 
 | **Workflow**        | **Trigger**         |
 | ------------------- | -------------------- |
-| CodeQL | Aanpassing aan de python source, data, dockerfile of requirements files|
-| Retrain Model Workflow | CodeQL |
-| Container Deployment Workflow | Retrain Model Workflow |
+| MLOps workflow - Analyze Python Code | Aanpassing aan de python source, data, dockerfile of requirements files|
+| MLOps workflow - Train Model | MLOps workflow - Analyze Python Code |
+| MLOps workflow - Build Image and Deploy | MLOps workflow - Train Model |
 
 Alle workflows kunnen handmatig worden gestart maar triggeren altijd een volgende workflow indien die gedefinieerd is.
 
