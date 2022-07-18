@@ -68,7 +68,7 @@ Alle workflows kunnen handmatig worden gestart maar triggeren altijd een volgend
 ### Gebruik van de container
 Je kan de container aanroepen met ```http://<AZURE URL>.io:8000/```. Wat de Azure URL precies is kan worden opgezocht in het Overview scherm van de betreffende container instance. De aanroep naar de root context zal een simpele boodschap tonen:<br>
 ```{"message":"FastAPI zegt Hallo Wereld"}```<br>.
-Om het model te testen is de eenvoudigste methode om de de API call via de Swagger UI /docs uit te voeren. Met curl kom je er ook. De swagger UI geeft hiervoor een voorbeeld na het aanroepen van de API.
+Om het model te testen is de eenvoudigste methode om de de API call uit te voeren via de Swagger UI. De context daarvan is ```/docs```.<br>
 
 Om de API call te kunnen testen klik je op ```POST /predict Predict Bankbiljet``` balk.<br><br>
 ![image](https://user-images.githubusercontent.com/57792298/178727346-20b3326b-e23f-4e2a-a47e-2f9b221102b1.png)<br><br>
