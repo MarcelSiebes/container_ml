@@ -1,7 +1,7 @@
-# MLOps POC met Github Actions en Azure Container Instances
+# MLOps POC met Github Actions en Azure Cloud
 
-## Doel: MLOps POC - Train een classificatiemodel en implementeer die geautomatiseerd in ACI.<br>
-Na een code controle wordt het model getraind en het getrainde model wordt in een docker container gekopieerd. De container wordt gedeployed in ACI (Azure Cloud). Het proces is geautomatiseerd met behulp van Github Actions en kan op verschillende manieren worden gestart.<br>
+## Doel: Train een classificatiemodel en implementeer die geautomatiseerd in Azure.<br>
+Na een code controle wordt het model getraind en het getrainde model wordt in een docker container gekopieerd. De container wordt gedeployed in ACI (Azure Container Instance). Het proces is geautomatiseerd met behulp van Github Actions en kan op verschillende manieren worden gestart.<br>
 In Azure moet een container registry aanwezig zijn. Er zijn daarom eerst wat voorbereidingen noodzakelijk.<br>
 De code bevat een support vector machine. Het model is getraind met een UCI dataset. Deze dataset bevat gegevens die verkregen zijn door met een een wavelet transformatie tool, statistische features te extraheren van bankbiljet foto's. De set bestaat uit gegevens van valse en niet valse bankbiljetten.
 Het model zal aan de hand van waardes die worden meegegeven aan vier parameters proberen te bepalen of een bankbiljet vals is of niet. Deze parameters zijn:
