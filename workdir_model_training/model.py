@@ -53,6 +53,6 @@ print("Confusion Matrix:")
 print(confusion_matrix(y_test, y_pred))
 
 # Maak een Pickle file van het getrainde model voor gebruik in de container
-pickle_file = open("workdir_model_training/model.pkl", "wb")
+pickle_file = open("model.pkl", "wb")
 pickle.dump(model, pickle_file)
 pickle_file.close()

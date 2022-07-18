@@ -38,6 +38,6 @@ jobs:
         run: |
           git config --global user.email "marcel@siebes.nl"
           git config --global user.name "MarcelSiebes"
-          git add workdir_model_training/model.pkl
+          git add model.pkl
           git commit -m "new trained model"
           git push

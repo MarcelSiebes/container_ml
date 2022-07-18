@@ -21,7 +21,7 @@ from bankbiljetten import bankbiljet
 app = FastAPI()
 
 # Laadt het model in
-model_pickle = open("model.pkl", "rb")
+model_pickle = open("/app/model.pkl", "rb")
 model = pickle.load(model_pickle)
 
 #
