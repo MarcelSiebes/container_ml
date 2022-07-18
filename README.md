@@ -52,7 +52,7 @@ Voeg de onderstaande secrets toe in Github (Settings -> Secrets -> Actions)
 | RESOURCE_GROUP | De naam van de resource group gebruikt in de scope van de service principal |
 
 
-### Use cases van de workflows:
+### Triggers van de workflows:
 Er zijn drie workflows gedefinieerd met Github Actions. In de onderstaande tabel zijn de triggers uiteengezet.
 
 | **Workflow**        | **Trigger**         |
