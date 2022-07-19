@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import roc_auc_score, confusion_matrix, classification_report
+from sklearn.metrics import accuracy_score, roc_auc_score, confusion_matrix, classification_report
 from sklearn.svm import SVC
 import pickle
 
@@ -43,10 +43,10 @@ model = SVC(kernel='poly', degree=3, probability=True)
 model.fit(X_train, y_train)
 
 # Predict de target van de test set
-y_pred = model.predict_proba(X_test)
+y_pred = model.predict(X_test)
 
 # Bepaal de AUC score, classificatie rapport en de confusion matrix
-score = roc_auc_score(y_test, y_pred)
+score = accuracy_score(y_test, y_pred)
 print("AUC Score {}", score)
 print(classification_report(y_test, y_pred))
 print("Confusion Matrix:")

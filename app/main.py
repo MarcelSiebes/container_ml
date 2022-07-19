@@ -47,7 +47,7 @@ def predict_bankbiljet(data:bankbiljet):
     prediction = model.predict_proba([[variance, skewness, curtosis, entropy]])
 
     # Indien de uitkomst hoger dan 0.5 is dan verklaren we het bankbiljet vals
-    if(prediction[0] == 1): prediction_result = "Vals bankbiljet"
+    if(prediction[0] > 0.5): prediction_result = "Vals bankbiljet"
     else: prediction_result = "Goed bankbiljet"
     return {
         'prediction': prediction_result, 'confidence': prediction[0]
