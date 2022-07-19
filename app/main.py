@@ -50,7 +50,7 @@ def predict_bankbiljet(data:bankbiljet):
     if(prediction[0] > 0.5 ): prediction_result = "Vals bankbiljet"
     else: prediction_result = "Goed bankbiljet"
     return {
-        'prediction': prediction_result
+        'prediction': prediction_result, 'confidence': prediction[0]
     }
 
 # Main
