@@ -39,11 +39,11 @@ y = df_norm.iloc[:,-1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 0)
 
 # Implementeer een support vector machine met een poly kernel zoals in het artikel
-model = SVC(kernel='poly', degree=3)
+model = SVC(kernel='poly', degree=3, probability=True)
 model.fit(X_train, y_train)
 
 # Predict de target van de test set
-y_pred = model.predict(X_test)
+y_pred = model.predict_proba(X_test)
 
 # Bepaal de AUC score, classificatie rapport en de confusion matrix
 score = roc_auc_score(y_test, y_pred)
