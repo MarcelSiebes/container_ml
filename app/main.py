@@ -44,13 +44,13 @@ def predict_bankbiljet(data:bankbiljet):
     entropy = data['entropy']
 
     # Doe de logistische regressie
-    prediction = model.predict_proba([[variance, skewness, curtosis, entropy]])
+    prediction = model.predict([[variance, skewness, curtosis, entropy]])
 
     # Indien de uitkomst hoger dan 0.5 is dan verklaren we het bankbiljet vals
     if(prediction[0] > 0.5): prediction_result = "Vals bankbiljet"
     else: prediction_result = "Goed bankbiljet"
     return {
-        'prediction': prediction_result, 'confidence': prediction[0]
+        'prediction': prediction_result
     }
 
 # Main
