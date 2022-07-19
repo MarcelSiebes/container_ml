@@ -1,23 +1,20 @@
-on: [push]
-      workflow_run:
-        workflows: ["MLOps workflow - Analyze Python Code"]
-        types: [completed]
-      # maak handmatig starten van de workflow ook mogelijk
-      workflow_dispatch:
 name: Azure Cli job
+
+on:
+  # maak handmatig starten van de workflow ook mogelijk
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-  
     steps:
       - name: Azure Login
         uses: azure/login@v1
         with:
           creds: ${{secrets.AZURE_CREDENTIALS }}
         
-      - name:
+      - name: Azure Cli Script
         uses: azure/CLI@v1
         with:
           azcliversion: 2.30.0
