@@ -5,7 +5,12 @@ name: Azure Cli job
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+  workflow_run:
+    workflows: ["MLOps workflow - Analyze Python Code"]
+    types: [completed]
+  # maak handmatig starten van de workflow ook mogelijk
+  workflow_dispatch:
+  
     steps:
       - name: Azure Login
         uses: azure/login@v1
