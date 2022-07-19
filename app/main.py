@@ -25,7 +25,7 @@ model_pickle = open("/app/model.pkl", "rb")
 model = pickle.load(model_pickle)
 
 #
-# Een laat API call definities
+# Een paar API call definities
 #
 
 # Een test API call
@@ -43,10 +43,10 @@ def predict_bankbiljet(data:bankbiljet):
     curtosis = data['curtosis']
     entropy = data['entropy']
 
-    # Doe de logistische regressie
+    # Doe de predictie
     prediction = model.predict([[variance, skewness, curtosis, entropy]])
 
-    # Indien de uitkomst hoger dan 0.5 is dan verklaren we het bankbiljet vals
+    # Indien de uitkomst hoger dan 0.5 (dus 1) is dan verklaren we het bankbiljet vals
     if(prediction[0] > 0.5): prediction_result = "Vals bankbiljet"
     else: prediction_result = "Goed bankbiljet"
     return {
