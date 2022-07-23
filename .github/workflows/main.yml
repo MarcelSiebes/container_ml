@@ -20,9 +20,9 @@ jobs:
            creds: ${{ secrets.AZURE_CREDENTIALS }}
 
        # maak de Azure resource group
-       - name: 'Deploy ML Resource Group'
+       - name: 'Deploy Azure Container Registry'
          uses: azure/arm-deploy@v1
          with:
            subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-           template: ./main.bicep
+           template: ./deploy/main.bicep
       

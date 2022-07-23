@@ -16,41 +16,39 @@ Het reseach paper kan hier worden gevonden:
 
 ## Instructies
 
-### Vooraf regelen:
-- Azure Container Registry
-- Cloud Shell (eventueel een storage account hiervoor inrichten)
+### Vooraf regelen
+Er is vooraf een resource group nodig en een service principle met toegang tot die resource group.
+Voer daarom de volgende stappen uit.
 
-#### Voer uit:
-- Haal het resource ID van de resource group op waarin de Azure Container Registry is gedefinieerd
+- Inloggen op Azure
 ```
-az group show --name <RESOURCE GROUP NAAM> --query id --output tsv
-```
-
-- Maak een Service Principle
-```
-az ad sp create-for-rbac --scope <RESOURCE ID> --role Contributor --sdk-auth
-```
-Bewaar de JSON uitvoer, die is nog nodig.
-
-- Haal het resource ID op van de container registry
-```
-az acr show --name <CONTAINER REGISTRY NAAM> --query id --output tsv
+az login
 ```
 
-- Koppel de AcrPush role (geeft push en pull toegang op de registry)
+- Maak een resource group en bewaar het ID dat in de output wordt getoond
 ```
-az role assignment create --assignee <CLIENT ID> --scope <REGISTRY ID> --role AcrPush
+az group create --name rg-containerml --location westeurope
 ```
+
+- Definieer een Service Principle met de Contributor role
+```
+az ad sp create-for-rbac \
+  --name ContainerMLWorkflow \
+  --role Contributor \
+  --scopes /subscriptions/158bfc3b-fe2e-49bd-bec1-5ba012b5aa7c/resourceGroups/rg-containerml \
+  --sdk-auth
+```
+Bewaar de JSON uitvoer en sla die in een secret op zoals in de volgende stap is vermeld.
 
 Voeg de onderstaande secrets toe in Github (Settings -> Secrets -> Actions)
 
 | **Secret**        | **Value**         |
 | ----------------- |-------------------|
-| AZURE_CREDENTIALS | De complete JSON uit de service principal stap |
+| AZURE_CREDENTIALS | De complete JSON uit de Service Principle stap |
 | REGISTRY_LOGIN_SERVER | De login server naam van de registry |
-| REGISTRY_USERNAME | Het clientId uit de JSON uit de service principal stap |
-| REGISTRY_PASSWORD | Het clientSecret uit de JSON uit de service principal stap |
-| RESOURCE_GROUP | De naam van de resource group gebruikt in de scope van de service principal |
+| REGISTRY_USERNAME | Het clientId uit de JSON uit de Service Principle stap |
+| REGISTRY_PASSWORD | Het clientSecret uit de JSON uit de Service Principle stap |
+| RESOURCE_GROUP | De naam van de resource group gebruikt in de scope van de Service Principle |
 
 
 ### Triggers van de workflows:
