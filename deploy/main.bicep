@@ -11,5 +11,5 @@ resource acr 'Microsoft.ContainerRegistry/registries@2021-09-01' = {
   }
 }
 
-@description('Output the login server property for later use')
+@description('Output de login server property voor later gebruik')
 output loginServer string = acr.properties.loginServer
