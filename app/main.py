@@ -23,7 +23,6 @@ app = FastAPI()
 # Laadt het model in
 model_pickle = open("/app/model.pkl", "rb")
 model = pickle.load(model_pickle)
-print(f"Model geladen met de parameters: {model.params}")
 
 #
 # Een paar API call definities
