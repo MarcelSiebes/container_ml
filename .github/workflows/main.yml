@@ -9,6 +9,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      loginServer: ${{ steps.build.outputs.loginServer }}
 
     steps:
        # checkout de code naar de Github workspace
