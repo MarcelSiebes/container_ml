@@ -55,4 +55,5 @@ print(confusion_matrix(y_test, y_pred))
 # Maak een Pickle file van het getrainde model voor gebruik in de container
 pickle_file = open("model.pkl", "wb")
 pickle.dump(model, pickle_file)
+print(f"Model opgeslagen met de parameters: {pickle_file.params}")
 pickle_file.close()
